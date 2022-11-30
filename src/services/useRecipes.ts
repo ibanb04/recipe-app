@@ -13,9 +13,6 @@ export const getRecipes = async (categories: string) => {
     const { recipes } = data;
     return recipes;
 };
-interface RecipeProps {
-    resetOnWindowFocus?: boolean;
-}
 
 export default function useRecipes(nameCategory: string): UseQueryResult<any> {
     return useQuery([nameCategory], () => getRecipes(nameCategory));

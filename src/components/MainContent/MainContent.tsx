@@ -3,6 +3,7 @@ import CardRecipeMobile from '../CardRecipe/CardRecipeMobile';
 import useRecipes from '../../services/useRecipes';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
+import CardSkeleton from '../CardRecipe/CardSkeleton';
 const MainContent = () => {
 
     const { nameCategory } = useSelector((state: RootState) => state.categories);
@@ -17,10 +18,14 @@ const MainContent = () => {
                 <div className="contCarrusel">
 
                     <ul id="carruselini" className="carrusel">
+
+
                         {
-                            recipes?.map((recipe: any, index: number) => (
+                            isLoading ? (
+                                <CardSkeleton />
+                            ) : (recipes?.map((recipe: any, index: number) => (
                                 <CardRecipe key={recipe.id} {...recipe} index={index} />
-                            ))
+                            )))
                         }
                     </ul>
                     <ul id="carruselfin" className="carrusel">
