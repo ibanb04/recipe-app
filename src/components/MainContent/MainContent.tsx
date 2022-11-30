@@ -47,14 +47,14 @@ const MainContent = () => {
                     <ul id="carruselini" className="carrusel">
                         {
                             tarjets.map((recipe) => (
-                                <CardRecipe {...recipe} />
+                                <CardRecipe key={recipe.idnormal} {...recipe} />
                             ))
                         }
                     </ul>
                     <ul id="carruselfin" className="carrusel">
                         {
                             tarjets.map((recipe) => (
-                                <CardRecipeMobile {...recipe} />
+                                <CardRecipeMobile key={recipe.idnormal} {...recipe} />
                             ))
                         }
                     </ul>
