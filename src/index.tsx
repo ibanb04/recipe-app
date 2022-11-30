@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./App.css";
 import RecipeApp from './RecipeApp';
-
+import { QueryClient, QueryClientProvider } from 'react-query';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <RecipeApp />
+    <QueryClientProvider client={queryClient}>
+      <RecipeApp />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
