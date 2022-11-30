@@ -1,14 +1,9 @@
 import React from "react";
 import ic_star from "../../assets/icons/ic_star.svg";
 import ic_favorite from "../../assets/icons/ic-favorite.svg";
-const CardRecipeMobile = ({
-  readyInMinutes,
-  servings,
-  title,
-  image,
-  sourceUrl,
-  index,
-}) => {
+import { useRandomRating } from "./helpers/useRandomRating";
+const CardRecipeMobile = ({ title, image }) => {
+  const rating = useRandomRating(0.0, 5.0, 1);
   return (
     <li className="tarjet">
       <div className="plate" style={{ backgroundImage: `url(${image})` }}></div>
@@ -19,7 +14,7 @@ const CardRecipeMobile = ({
         </div>
         <div className="score">
           <img className="star" src={ic_star} />
-          <span>5.0</span>
+          <span>{rating}</span>
           <img className="heart" src={ic_favorite} />
         </div>
       </div>
