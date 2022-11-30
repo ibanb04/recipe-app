@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './components/Footer/Footer';
 import MainContent from './components/MainContent/MainContent';
 import MainTitle from './components/MainTitle/MainTitle';
-import { MenuMobile } from './components/MenuMobile';
+import { MenuMobile } from './components/MenuMobile/MenuMobile';
 import NavBar from './components/NavBar/NavBar';
 
 const RecipeApp = () => {
