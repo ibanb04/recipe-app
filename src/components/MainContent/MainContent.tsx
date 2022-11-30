@@ -13,8 +13,8 @@ const MainContent = () => {
 
                     <ul id="carruselini" className="carrusel">
                         {
-                            recipes?.map((recipe: any) => (
-                                <CardRecipe key={recipe.idnormal} {...recipe} />
+                            recipes?.map((recipe: any, index: number) => (
+                                <CardRecipe key={recipe.id} {...recipe} index={index} />
                             ))
                         }
                     </ul>

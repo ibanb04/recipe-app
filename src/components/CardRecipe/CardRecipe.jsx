@@ -5,59 +5,49 @@ import icTime from "../../assets/icons/ic_time.svg";
 import icChef from "../../assets/icons/ic_chef.svg";
 
 const CardRecipe = ({
-  idnormal,
-  imgPlate,
-  foodDesc,
-  idhover,
-  calification,
-  food,
+  readyInMinutes,
+  servings,
+  title,
+  image,
+  sourceUrl,
+  index,
 }) => {
   function showHover() {
-    document.getElementById(idnormal)?.setAttribute("hidden", "true");
-    document.getElementById(idhover)?.removeAttribute("hidden");
+    document.getElementById(`normal${index}`)?.setAttribute("hidden", "true");
+    document.getElementById(`hover${index}`)?.removeAttribute("hidden");
   }
   function showNormal() {
-    document.getElementById(idnormal)?.removeAttribute("hidden");
-    document.getElementById(idhover)?.setAttribute("hidden", "true");
+    document.getElementById(`normal${index}`)?.removeAttribute("hidden");
+    document.getElementById(`hover${index}`)?.setAttribute("hidden", "true");
   }
   return (
-    <li
-      key={idnormal}
-      className="tarjet"
-      onMouseOver={showHover}
-      onMouseOut={showNormal}
-    >
-      <div
-        className="plate"
-        style={{ backgroundImage: `url(${imgPlate})` }}
-      ></div>
-      <div id={idnormal} className="normalTarjet">
+    <li className="tarjet" onMouseOver={showHover} onMouseOut={showNormal}>
+      <div className="plate" style={{ backgroundImage: `url(${image})` }}></div>
+      <div id={`normal${index}`} className="normalTarjet">
         <div className="textFood">
-          <span className="food">{food}</span>
-          <span className="foodDesc">{foodDesc}</span>
+          <span className="food">{title.substring(0, 8)} </span>
+          <span className="foodDesc"> jajdjsa</span>
         </div>
         <div className="score">
           <img className="star" alt="star" src={icStar} />
-          <span>{calification} </span>
+          <span>{} </span>
           <img className="heart" alt="favoriteIcon" src={icFavorite} />
         </div>
       </div>
-      <div id={idhover} className="divhover" hidden>
+      <div id={`hover${index}`} className="divhover" hidden>
         <div className="hoverTarjet">
           <div className="descriptionHover">
             <img className="imgHover" alt="portion" src={icPortion} />
-            <span className="titTextHover">
-              Tama&ntilde;o de la porci&oacute;n
-            </span>
-            <span className="textHover">4 raciones</span>
+            <span className="titTextHover">Tamaño de la porción</span>
+            <span className="textHover">{servings} raciones</span>
           </div>
           <div className="descriptionHover">
             <img className="imgHover" alt="time" src={icTime} />
-            <span className="titTextHover">Tiempo de preparaci&oacute;n</span>
-            <span className="textHover">10 minutos</span>
+            <span className="titTextHover">Tiempo de preparación</span>
+            <span className="textHover">{readyInMinutes} minutos</span>
           </div>
           <div className="descriptionHover">
-            <img className="imgHover" alt={food} src={icChef} />
+            <img className="imgHover" alt={title} src={icChef} />
             <span className="titTextHover">Dificultad</span>
             <span className="textHover">f&aacute;cil</span>
           </div>
