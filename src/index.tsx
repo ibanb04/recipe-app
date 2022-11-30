@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import "./App.css";
 import RecipeApp from './RecipeApp';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux'
+import { store } from './store/store';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -10,9 +12,11 @@ const queryClient = new QueryClient();
 
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RecipeApp />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RecipeApp />
+      </QueryClientProvider>
+    </Provider>
   </React.StrictMode>
 );
 
