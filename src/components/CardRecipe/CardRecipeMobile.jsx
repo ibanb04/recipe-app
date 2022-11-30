@@ -2,26 +2,24 @@ import React from "react";
 import ic_star from "../../assets/icons/ic_star.svg";
 import ic_favorite from "../../assets/icons/ic-favorite.svg";
 const CardRecipeMobile = ({
-  food,
-  calification,
-  foodDesc,
-  imgPlate,
-  idnormal,
+  readyInMinutes,
+  servings,
+  title,
+  image,
+  sourceUrl,
+  index,
 }) => {
   return (
     <li className="tarjet">
-      <div
-        className="plate"
-        style={{ backgroundImage: `url(${imgPlate})` }}
-      ></div>
-      <div id={idnormal} className="normalTarjet">
+      <div className="plate" style={{ backgroundImage: `url(${image})` }}></div>
+      <div className="normalTarjet">
         <div className="textFood">
-          <span className="food">{food} </span>
-          <span className="foodDesc">{foodDesc}</span>
+          <span className="food">{title.substring(0, 8)} </span>
+          <span className="foodDesc">holi</span>
         </div>
         <div className="score">
           <img className="star" src={ic_star} />
-          <span>{calification}</span>
+          <span>5.0</span>
           <img className="heart" src={ic_favorite} />
         </div>
       </div>

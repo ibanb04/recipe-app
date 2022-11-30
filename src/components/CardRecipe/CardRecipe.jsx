@@ -30,7 +30,7 @@ const CardRecipe = ({
         </div>
         <div className="score">
           <img className="star" alt="star" src={icStar} />
-          <span>{} </span>
+          <span>10</span>
           <img className="heart" alt="favoriteIcon" src={icFavorite} />
         </div>
       </div>
