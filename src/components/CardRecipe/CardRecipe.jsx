@@ -3,6 +3,8 @@ import icFavorite from "../../assets/icons/ic-favorite.svg";
 import icPortion from "../../assets/icons/ic_portion.svg";
 import icTime from "../../assets/icons/ic_time.svg";
 import icChef from "../../assets/icons/ic_chef.svg";
+import { useRandomRating } from "./helpers/useRandomRating";
+import { useRandomDifficultyLevel } from "./helpers/useRandomDifficultyLevel";
 
 const CardRecipe = ({
   readyInMinutes,
@@ -12,6 +14,9 @@ const CardRecipe = ({
   sourceUrl,
   index,
 }) => {
+  const rating = useRandomRating(0.0, 5.0, 1);
+  const difficultyLevel = useRandomDifficultyLevel();
+
   function showHover() {
     document.getElementById(`normal${index}`)?.setAttribute("hidden", "true");
     document.getElementById(`hover${index}`)?.removeAttribute("hidden");
@@ -30,7 +35,7 @@ const CardRecipe = ({
         </div>
         <div className="score">
           <img className="star" alt="star" src={icStar} />
-          <span>10</span>
+          <span>{rating}</span>
           <img className="heart" alt="favoriteIcon" src={icFavorite} />
         </div>
       </div>
@@ -49,7 +54,7 @@ const CardRecipe = ({
           <div className="descriptionHover">
             <img className="imgHover" alt={title} src={icChef} />
             <span className="titTextHover">Dificultad</span>
-            <span className="textHover">f&aacute;cil</span>
+            <span className="textHover">{difficultyLevel}</span>
           </div>
         </div>
       </div>
