@@ -17,6 +17,6 @@ interface RecipeProps {
     resetOnWindowFocus?: boolean;
 }
 
-export default function useRecipes(categories: string, name: string): UseQueryResult<any> {
-    return useQuery([name], () => getRecipes(categories));
+export default function useRecipes(nameCategory: string): UseQueryResult<any> {
+    return useQuery([nameCategory], () => getRecipes(nameCategory));
 }

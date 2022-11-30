@@ -1,8 +1,13 @@
 import CardRecipe from '../CardRecipe/CardRecipe';
 import CardRecipeMobile from '../CardRecipe/CardRecipeMobile';
 import useRecipes from '../../services/useRecipes';
+import { RootState } from '../../store/store';
+import { useSelector } from 'react-redux';
 const MainContent = () => {
-    const { data: recipes, isLoading, error, isFetching } = useRecipes("vegetarian", "vegetarian");
+
+    const { nameCategory } = useSelector((state: RootState) => state.categories);
+
+    const { data: recipes, isLoading, error, isFetching } = useRecipes(nameCategory);
     console.log('recipes', recipes);
 
     return (

@@ -5,6 +5,7 @@ import icTime from "../../assets/icons/ic_time.svg";
 import icChef from "../../assets/icons/ic_chef.svg";
 import { useRandomRating } from "./helpers/useRandomRating";
 import { useRandomDifficultyLevel } from "./helpers/useRandomDifficultyLevel";
+import { useSelector } from "react-redux";
 
 const CardRecipe = ({
   readyInMinutes,
@@ -14,6 +15,7 @@ const CardRecipe = ({
   sourceUrl,
   index,
 }) => {
+  const { nameCategory } = useSelector((state) => state.categories);
   const rating = useRandomRating(0.0, 5.0, 1);
   const difficultyLevel = useRandomDifficultyLevel();
 
@@ -31,7 +33,7 @@ const CardRecipe = ({
       <div id={`normal${index}`} className="normalTarjet">
         <div className="textFood">
           <span className="food">{title.substring(0, 8)} </span>
-          <span className="foodDesc"> jajdjsa</span>
+          <span className="foodDesc">{nameCategory} </span>
         </div>
         <div className="score">
           <img className="star" alt="star" src={icStar} />
