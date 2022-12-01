@@ -29,9 +29,13 @@ const MainContent = () => {
                     </ul>
                     <ul id={styles.recipesCarouselMobile} className={styles.carrusel}>
                         {
-                            recipes?.map((recipe: any) => (
-                                <CardRecipeMobile key={recipe.idnormal} {...recipe} />
-                            ))
+
+                            isLoading ? (
+                                <CardSkeleton />
+                            ) : (
+                                recipes?.map((recipe: any) => (
+                                    <CardRecipeMobile key={recipe.idnormal} {...recipe} />
+                                )))
                         }
                     </ul>
                 </div>

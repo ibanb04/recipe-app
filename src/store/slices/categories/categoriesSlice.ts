@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    nameCategory: '',
+    nameCategory: 'dessert',
 }
 
 const categoriesSlice = createSlice({

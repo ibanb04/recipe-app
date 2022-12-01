@@ -172,6 +172,11 @@ $background-color_1: #ededed;
 }
 
 @media (max-width: 428px) {
+  .loading {
+    .description {
+      min-height: 1.5rem;
+    }
+  }
   .normalTarjet {
     width: 180px;
   }
