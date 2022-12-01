@@ -16,14 +16,14 @@ const MainContent = () => {
         <>
             <div className={styles.middle}>
                 <div className={styles.middleTitle}>Nuevas Recetas</div>
-                <div className={styles.contCarrusel}>
+                <div className={styles.conCarrusel}>
 
                     <ul id={styles.recipesCarousel} className={styles.carrusel}>
                         {
                             isLoading ? (
                                 <CardSkeleton />
                             ) : (recipes?.map((recipe: any, index: number) => (
-                                <CardRecipe key={recipe.id} {...recipe} index={index} />
+                                <CardRecipe key={index} {...recipe} index={index} />
                             )))
                         }
                     </ul>
@@ -33,8 +33,8 @@ const MainContent = () => {
                             isLoading ? (
                                 <CardSkeleton />
                             ) : (
-                                recipes?.map((recipe: any) => (
-                                    <CardRecipeMobile key={recipe.idnormal} {...recipe} />
+                                recipes?.map((recipe: any, index: number) => (
+                                    <CardRecipeMobile key={index} {...recipe} />
                                 )))
                         }
                     </ul>

@@ -23,7 +23,11 @@ const CardSkeleton = () => {
 
     return (
         <>
-            {skeleton}
+            {skeleton.map((item, index) => (
+                <React.Fragment key={index}>
+                    {item}
+                </React.Fragment>
+            ))}
 
         </>
     )
