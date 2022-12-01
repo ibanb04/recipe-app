@@ -1,8 +1,9 @@
 import { cardsData } from "./utils/cardsData";
 import styles from "./MenuMobile.module.scss";
-export const MenuMobile = () => {
+import { FC } from "react";
+export const MenuMobile: FC = () => {
   return (
-    <div id="menuHead2" className={styles.menuHeads}>
+    <div className={styles.menuHeads}>
       {cardsData.map((element) => (
         <div key={element.idnormal} className={styles.tarjetMenu}>
           <img className={styles.imgMenu} src={element.imgMenu} />
