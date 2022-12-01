@@ -54,7 +54,9 @@ const CardRecipe: FC<ICardRecipeProps> = ({
       <div id={`normal${index}`} className={styles.normalTarjet}>
         <div className={styles.textFood}>
           <span className={styles.food}>{title.substring(0, 8)} </span>
-          <span className={styles.foodDesc}>{nameCategory} </span>
+          <span className={styles.foodDesc}>
+            {nameCategory === "" ? "kids" : nameCategory}
+          </span>
         </div>
         <div className={styles.score}>
           <img className={styles.star} alt="star" src={icStar} />

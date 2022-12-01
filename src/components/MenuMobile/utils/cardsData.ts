@@ -31,7 +31,7 @@ export const cardsData = [
         idnormal: "tarhead5",
         imgMenu: ic_kids,
         food: "Menú Niños",
-        path: "dessert"
+        path: ""
     }, {
         idnormal: "tarhead6",
         imgMenu: ic_soup,

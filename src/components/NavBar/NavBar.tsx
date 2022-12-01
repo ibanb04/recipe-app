@@ -21,13 +21,13 @@ const NavBar = () => {
                 <ul>
                     {
                         navbarItems.map((item, index) => (
-                            <li key={index} className={nameCategory === item.path ? "selected" : ""} onClick={() => handleCategory(item.path)}>{item.title}</li>
+                            <li key={index} className={nameCategory === item.path ? `${styles.selected}` : ""} onClick={() => handleCategory(item.path)}>{item.title}</li>
                         ))
                     }
 
                 </ul>
             </div>
-            <div className={styles.icoHome}></div>
+            <div className={styles.icoHome} onClick={() => handleCategory('fingerfood')}></div>
         </div>
     )
 }

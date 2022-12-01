@@ -9,7 +9,7 @@ const MainContent = () => {
 
     const { nameCategory } = useSelector((state: RootState) => state.categories);
 
-    const { data: recipes, isLoading } = useRecipes(nameCategory);
+    const { data: recipes, isLoading, isFetching } = useRecipes(nameCategory);
     console.log('recipes', recipes);
 
     return (
@@ -20,7 +20,7 @@ const MainContent = () => {
 
                     <ul id={styles.recipesCarousel} className={styles.carrusel}>
                         {
-                            isLoading ? (
+                            isLoading || isFetching ? (
                                 <CardSkeleton />
                             ) : (recipes?.map((recipe: any, index: number) => (
                                 <CardRecipe key={index} {...recipe} index={index} />
@@ -30,7 +30,7 @@ const MainContent = () => {
                     <ul id={styles.recipesCarouselMobile} className={styles.carrusel}>
                         {
 
-                            isLoading ? (
+                            isLoading || isFetching ? (
                                 <CardSkeleton />
                             ) : (
                                 recipes?.map((recipe: any, index: number) => (

@@ -10,14 +10,17 @@ interface ICardRecipeMobileProps {
   title: string;
   image: string;
   index: string;
+  sourceUrl: string;
 }
 
-const CardRecipeMobile: FC<ICardRecipeMobileProps> = ({ title, image, index }) => {
+const CardRecipeMobile: FC<ICardRecipeMobileProps> = ({ title, image, index, sourceUrl }) => {
   const { nameCategory } = useSelector((state: RootState) => state.categories);
 
   const rating = useRandomRating(0.0, 5.0, 1);
   return (
-    <li className={styles.tarjet}>
+    <li
+      onClick={() => window.open(sourceUrl, '_blank')}
+      className={styles.tarjet}>
       <div
         className={styles.plate}
         style={{ backgroundImage: `url(${image})` }}
@@ -25,7 +28,7 @@ const CardRecipeMobile: FC<ICardRecipeMobileProps> = ({ title, image, index }) =
       <div id={`normal${index}`} className={styles.normalTarjet}>
         <div className={styles.textFood}>
           <span className={styles.food}>{title.substring(0, 8)} </span>
-          <span className={styles.foodDesc}>{nameCategory} </span>
+          <span className={styles.foodDesc}>{nameCategory === "" ? "kids" : nameCategory} </span>
         </div>
         <div className={styles.score}>
           <img className={styles.star} alt="star" src={icStar} />
