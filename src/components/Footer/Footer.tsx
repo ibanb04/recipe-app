@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className={styles.footer}>
             <div className={styles.textfooter}> <span>Con el patrocinio de</span></div>
-            <img className={styles.imgFooter} src={img_footer} />
+            <img className={styles.imgFooter} src={img_footer} alt="imagen patrocinador" />
         </div>
     )
 }

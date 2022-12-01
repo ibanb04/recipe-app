@@ -6,7 +6,7 @@ export const MenuMobile: FC = () => {
     <div className={styles.menuHeads}>
       {cardsData.map((element) => (
         <div key={element.idnormal} className={styles.tarjetMenu}>
-          <img className={styles.imgMenu} src={element.imgMenu} />
+          <img className={styles.imgMenu} src={element.imgMenu} alt={element.food} />
           <span className={styles.foodMenu}>{element.food}</span>
         </div>
       ))}

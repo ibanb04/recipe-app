@@ -9,7 +9,7 @@ const MainContent = () => {
 
     const { nameCategory } = useSelector((state: RootState) => state.categories);
 
-    const { data: recipes, isLoading, error, isFetching } = useRecipes(nameCategory);
+    const { data: recipes, isLoading } = useRecipes(nameCategory);
     console.log('recipes', recipes);
 
     return (

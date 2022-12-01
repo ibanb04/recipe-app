@@ -3,9 +3,17 @@ import icFavorite from "../../assets/icons/ic-favorite.svg";
 import { useRandomRating } from "./helpers/useRandomRating";
 import styles from "../MainContent/MainContent.module.scss";
 import { useSelector } from "react-redux";
+import { FC } from "react";
+import { RootState } from '../../store/store';
 
-const CardRecipeMobile = ({ title, image, index }) => {
-  const { nameCategory } = useSelector((state) => state.categories);
+interface ICardRecipeMobileProps {
+  title: string;
+  image: string;
+  index: string;
+}
+
+const CardRecipeMobile: FC<ICardRecipeMobileProps> = ({ title, image, index }) => {
+  const { nameCategory } = useSelector((state: RootState) => state.categories);
 
   const rating = useRandomRating(0.0, 5.0, 1);
   return (
