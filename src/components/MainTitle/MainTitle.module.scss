@@ -30,6 +30,9 @@
 @media (max-width: 428px) {
   .headform {
     .imgHead {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
       .floatText {
         .text1 {
           font: normal normal normal 51px/77px Poppins;
@@ -57,6 +60,8 @@
   .headform {
     .imgHead {
       .floatText {
+        top: 50px;
+        left: 121.55px;
         .text1 {
           font: normal normal normal 74px/111px Poppins;
         }
