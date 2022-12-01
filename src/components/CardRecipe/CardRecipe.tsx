@@ -45,6 +45,7 @@ const CardRecipe: FC<ICardRecipeProps> = ({
       className={styles.tarjet}
       onMouseOver={showHover}
       onMouseOut={showNormal}
+      onClick={() => window.open(sourceUrl, '_blank')}
     >
       <div
         className={styles.plate}
