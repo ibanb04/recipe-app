@@ -1,0 +1,98 @@
+.headform {
+  .imgHead {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    contain: content;
+    .floatText {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      .text1 {
+        text-align: left;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 1;
+        height: 79px;
+      }
+      .text2 {
+        text-align: left;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .headform {
+    .imgHead {
+      .floatText {
+        .text1 {
+          font: normal normal normal 51px/77px Poppins;
+        }
+        .text2 {
+          font: normal normal normal 51px/69px Monster Clubhouse;
+          margin-top: -30px;
+        }
+        top: 50px;
+        left: 56.5px;
+      }
+    }
+  }
+  .imgHead {
+    height: 234px;
+    background-image: url(../../assets/bcq.jpg);
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  .imgHead {
+    height: 249px;
+    background-image: url(../../assets/bcq.jpg);
+  }
+  .headform {
+    .imgHead {
+      .floatText {
+        .text1 {
+          font: normal normal normal 74px/111px Poppins;
+        }
+        .text2 {
+          font: normal normal normal 67px/91px Monster Clubhouse;
+          margin-top: -10px;
+        }
+      }
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .imgHead {
+    height: 416px;
+    background-image: url(../../assets/bcq.jpg);
+  }
+  .headform {
+    .imgHead {
+      .floatText {
+        top: 134px;
+        left: 261px;
+        .text1 {
+          font: normal normal normal 74px/111px Poppins;
+        }
+        .text2 {
+          font: normal normal normal 67px/91px Monster Clubhouse;
+          margin-top: -10px;
+        }
+      }
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
