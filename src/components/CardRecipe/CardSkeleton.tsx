@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "../MainContent/MainContent.module.scss";
 
 const CardSkeleton = () => {
 
@@ -7,11 +8,11 @@ const CardSkeleton = () => {
     for (let i = 0; i < 4; i++) {
         skeleton.push(
             <>
-                <li className="tarjet loading" >
-                    <div className="plate" ></div>
-                    <div className="content">
+                <li className={`${styles.tarjet} ${styles.loading}`} >
+                    <div className={styles.plate} ></div>
+                    <div className={styles.content}>
                         <h4></h4>
-                        <div className="description">
+                        <div className={styles.description}>
                         </div>
                     </div>
                 </li>

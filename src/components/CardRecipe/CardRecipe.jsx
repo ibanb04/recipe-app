@@ -6,6 +6,7 @@ import icChef from "../../assets/icons/ic_chef.svg";
 import { useRandomRating } from "./helpers/useRandomRating";
 import { useRandomDifficultyLevel } from "./helpers/useRandomDifficultyLevel";
 import { useSelector } from "react-redux";
+import styles from "../MainContent/MainContent.module.scss";
 
 const CardRecipe = ({
   readyInMinutes,
@@ -28,35 +29,42 @@ const CardRecipe = ({
     document.getElementById(`hover${index}`)?.setAttribute("hidden", "true");
   }
   return (
-    <li className="tarjet" onMouseOver={showHover} onMouseOut={showNormal}>
-      <div className="plate" style={{ backgroundImage: `url(${image})` }}></div>
-      <div id={`normal${index}`} className="normalTarjet">
-        <div className="textFood">
-          <span className="food">{title.substring(0, 8)} </span>
-          <span className="foodDesc">{nameCategory} </span>
+    <li
+      className={styles.tarjet}
+      onMouseOver={showHover}
+      onMouseOut={showNormal}
+    >
+      <div
+        className={styles.plate}
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+      <div id={`normal${index}`} className={styles.normalTarjet}>
+        <div className={styles.textFood}>
+          <span className={styles.food}>{title.substring(0, 8)} </span>
+          <span className={styles.foodDesc}>{nameCategory} </span>
         </div>
-        <div className="score">
-          <img className="star" alt="star" src={icStar} />
+        <div className={styles.score}>
+          <img className={styles.star} alt="star" src={icStar} />
           <span>{rating}</span>
-          <img className="heart" alt="favoriteIcon" src={icFavorite} />
+          <img className={styles.heart} alt="favoriteIcon" src={icFavorite} />
         </div>
       </div>
       <div id={`hover${index}`} className="divhover" hidden>
-        <div className="hoverTarjet">
-          <div className="descriptionHover">
-            <img className="imgHover" alt="portion" src={icPortion} />
-            <span className="titTextHover">Tamaño de la porción</span>
-            <span className="textHover">{servings} raciones</span>
+        <div className={styles.hoverTarjet}>
+          <div className={styles.descriptionHover}>
+            <img className={styles.imgHover} alt="portion" src={icPortion} />
+            <span className={styles.titTextHover}>Tamaño de la porción</span>
+            <span className={styles.textHover}>{servings} raciones</span>
           </div>
-          <div className="descriptionHover">
-            <img className="imgHover" alt="time" src={icTime} />
-            <span className="titTextHover">Tiempo de preparación</span>
-            <span className="textHover">{readyInMinutes} minutos</span>
+          <div className={styles.descriptionHover}>
+            <img className={styles.imgHover} alt="time" src={icTime} />
+            <span className={styles.titTextHover}>Tiempo de preparación</span>
+            <span className={styles.textHover}>{readyInMinutes} minutos</span>
           </div>
-          <div className="descriptionHover">
-            <img className="imgHover" alt={title} src={icChef} />
-            <span className="titTextHover">Dificultad</span>
-            <span className="textHover">{difficultyLevel}</span>
+          <div className={styles.descriptionHover}>
+            <img className={styles.imgHover} alt={title} src={icChef} />
+            <span className={styles.titTextHover}>Dificultad</span>
+            <span className={styles.textHover}>{difficultyLevel}</span>
           </div>
         </div>
       </div>
