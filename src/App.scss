@@ -1,0 +1,23 @@
+body {
+  margin: 0px;
+}
+@media (max-width: 428px) {
+  body {
+    height: 926px;
+    contain: content;
+    width: 428px;
+  }
+}
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+    height: 1024px;
+    contain: content;
+    width: 768px;
+  }
+}
+@media (min-width: 769px) {
+  body {
+    height: 1280px;
+    contain: content;
+  }
+}
