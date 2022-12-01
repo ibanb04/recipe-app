@@ -1,4 +1,3 @@
-import React from 'react'
 import img_footer from '../../assets/Grupo-7610.png'
 import styles from './Footer.module.scss'
 

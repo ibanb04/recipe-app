@@ -7,8 +7,20 @@ import { useRandomRating } from "./helpers/useRandomRating";
 import { useRandomDifficultyLevel } from "./helpers/useRandomDifficultyLevel";
 import { useSelector } from "react-redux";
 import styles from "../MainContent/MainContent.module.scss";
+import { FC } from "react";
+import { RootState } from '../../store/store';
 
-const CardRecipe = ({
+
+interface ICardRecipeProps {
+  readyInMinutes: number;
+  servings: number;
+  title: string;
+  image: string;
+  sourceUrl: string;
+  index: number;
+}
+
+const CardRecipe: FC<ICardRecipeProps> = ({
   readyInMinutes,
   servings,
   title,
@@ -16,7 +28,7 @@ const CardRecipe = ({
   sourceUrl,
   index,
 }) => {
-  const { nameCategory } = useSelector((state) => state.categories);
+  const { nameCategory } = useSelector((state: RootState) => state.categories);
   const rating = useRandomRating(0.0, 5.0, 1);
   const difficultyLevel = useRandomDifficultyLevel();
 
